@@ -1,0 +1,8 @@
+version 5.0
+
+1. data tables functioning
+2. edit tables text workin
+3. OO dsign for report-controller
+4. the following classes exist classAgents, classReports, classDbConnection and
+5. the following report type classes exist SimpelReportGeneratorClass and FullReportGeneratorClass
+

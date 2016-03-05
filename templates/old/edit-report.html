@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="indexCSS.css" >
+		<meta charset="utf-8"/>
+		
+		<script type="text/javascript" src="/jquery/jquery-2.2.0.js">
+		</script> 
+
+		<script type="text/javascript" src="/js/editTable.js">
+		</script> 
+		
+		<title> Report request </title>
+	</head>
+	<body>
+		
+
+<div class="wrapper">
+
+<div class="header">
+
+<img src = "images/AFI_logo.jpg" style = "width:200px;height:150px;">
+
+</div>
+<div>
+
+<img src = "images/spacer.jpg" style = "width:200px;height:100px;">
+
+</div>
+
+<div>
+
+<nav class="tabs">
+    <ul>
+        <li <?php if ($_SERVER['PHP_SELF'] == "/AFIindex.php"){ echo "id=\"selected\"";} ?>><a <?php if ($_SERVER['PHP_SELF'] == "/AFIindex.php"){ echo "style=\"color:#9f0a34;\"";} ?>  href="AFIindex.php">Home</a></li>
+        <li <?php if ($_SERVER['PHP_SELF'] == "/report-request.php"){ echo "id=\"selected\"";} ?> ><a <?php if ($_SERVER['PHP_SELF'] == "/report-request.php"){ echo "style=\"color:#9f0a34;\"";} ?> href="report-request.php">View Reports</a></li>
+	<li <?php if ($_SERVER['PHP_SELF'] == "/write-report.php"){ echo "id=\"selected\"";} ?>><a <?php if ($_SERVER['PHP_SELF'] == "/write-report.php"){ echo "style=\"color:#9f0a34;\"";} ?> href="write-report.php">Write Reports</a></li>
+        <li <?php if ($_SERVER['PHP_SELF'] == "/add.php"){ echo "id=\"selected\"";} ?>><a <?php if ($_SERVER['PHP_SELF'] == "/add.php"){ echo "style=\"color:#9f0a34;\"";} ?> href="add.php">Add Partner</a></li>
+    <li <?php if ($_SERVER['PHP_SELF'] == "/edit-report.php"){ echo "id=\"selected\"";} ?>><a <?php if ($_SERVER['PHP_SELF'] == "/edit-report.php"){ echo "style=\"color:#9f0a34;\"";} ?> href="edit-report.php">Edit Report</a></li>
+    </ul>
+</nav>
+
+<section id="content">
+    <p>
+   <!-- display different heading depending on page being displayed -->
+   
+    <?php if ($_SERVER['PHP_SELF'] == "/AFIindex.php"){ 
+    
+    echo " <h1>Welcome to AFI Reporting Tool </h1>";
+    
+    } else if ($_SERVER['PHP_SELF'] == "/report-request.php"){
+    
+    echo " <h1>Report Request </h1>";
+    
+    } else if ($_SERVER['PHP_SELF'] == "/write-report.php"){
+    
+    echo " <h1>Submit a Report </h1>";
+    
+    } else if ($_SERVER['PHP_SELF'] == "/add.php") {
+    
+    echo " <h1>Add a Partner </h1>";
+    
+    } else if ($_SERVER['PHP_SELF'] == "/edit-report.php") {
+    
+    echo " <h1>Edit a Report </h1>";
+    
+    } else {
+    
+    echo " you need to add code to header.html to display the correct heading";
+    
+    }
+    
+    ?>
+    
+    </p>

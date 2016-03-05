@@ -1,0 +1,47 @@
+To set up Database
+
+1. Start WAMP server
+
+2. Open phpMyAdmin (this will open in your default browser)
+
+3. Create a database called gafa
+
+		i. click on Databases tab (top right in phpMyAdmin)
+		ii. Type in gafa where it says Database name
+		iii. select latin1_swedish_ci under collation
+		iv. click create button
+		
+4. click on SQL tab (next to database tab)
+
+5. Copy and paste the enclosed .sql file into the top window
+
+6. click the Go button - RHS middle of the page
+
+7. DB should now be set up - use the links on the LHS to inspect the DB
+
+
+To view web pages
+
+1. copy the files in this folder to the following directory 
+
+	C:\wamp\www\
+	
+2. Start WAMP server on your laptop
+
+3. Open a browser (CHROME or FIREFOX, IE will not allow access to localhost as default)
+
+4. type the following into the browser URL area (where you normally type the web address you want)
+
+localhost/AFIindex.html
+
+NOTE - ensure that theres no www or http// before localhost
+
+5. press enter key and wait
+
+
+NOTE - You must have WAMP server installed
+NOTE - Not everything works, search basic reports and insert new reports does
+
+
+
+

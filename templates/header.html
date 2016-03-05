@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/indexCSS.css" >
+		<meta charset="utf-8"/>
+	
+	<script type="text/javascript" src="/jquery/jquery-2.2.0.js">
+	
+	</script> 
+	
+		
+	<script type="text/javascript" src="/js/editTable.js">
+	</script> 
+	<!-- this file is not included as it affects the header colour, the pagin ation buttons
+	at the bottom were moved to the indexCSS.css file -->
+	<!-- <link rel="stylesheet" type="text/css" href="./cssTables/jquery.dataTables.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="./cssTables/buttons.dataTables.min.css">
+	
+	
+<!-- bootstrap links -->
+	
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/scripts.js"></script>
+	
+<!-- Wrong order of .js files will prevent buttons from showing up - same order as buttons are displayed onscreen -->
+		<script type="text/javascript" language="javascript" src="./jsTables/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/dataTables.buttons.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/buttons.flash.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/buttons.html5.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/jszip.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/pdfmake.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/buttons.print.min.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/vfs_fonts.js"></script>
+		<script type="text/javascript" language="javascript" src="./jsTables/buttons.colVis.min.js"></script>
+
+		<!-- In the click event of any of the checkboxes, the use $(this).attr("name") 
+		determines the class name of the checkbox that was clicked. then it constructs a 
+		selector of all cells matching this class using $tbl.find() to find 
+		all cells with the class name. -->
+	
+
+
+	
+	<script> 
+         $(function () { //short for document ready function 
+	 
+	// function to toggle visibility of columns in reports, replaced by datatables.net
+         //   var $chk = $("#grpChkBox input:checkbox"); 
+        //    var $tbl = $("#tb1"); 
+	 //   $chk.prop('checked', true); 
+  
+         //   $chk.click(function () { 
+	     
+	 //   var colToHide = $tbl.find("." + $(this).attr("name")); 
+         //   $(colToHide).toggle(); 
+		  
+         //   }); 
+	     
+	     // function to export to excel replaced by datatables
+	     //$("#btnExport").click(function (e) {
+		//window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#printTable').html()));
+		//e.preventDefault();
+		//});
+	  
+	// following code handle the clicking of the tabs	
+	//Default Action
+	
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+     
+	// following code displays tabs as clicked 
+	//On Click Event
+	$("ul.tabs li").click(function() {
+        $("ul.tabs li").removeClass("active"); //Remove any "active" class
+        $(this).addClass("active"); //Add "active" class to selected tab
+        $(".tab_content").hide(); //Hide all tab content
+        var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+        $(activeTab).fadeIn(); //Fade in the active content
+        return false;
+    });
+
+    // f= search
+    // p = current page displayed
+    // i = information i.e page 2 of 6
+    // t = table i.e position of table relative to buttons displayed
+    // l = number of rows displayed
+    // r = processing
+    // B = Buttons
+    // class called datatablesdiv 
+    var table = $('#tb1').DataTable( {
+					dom: '<"datatablesdiv" l> <"datatablesdiv" f> <"datatablesdiv" r> <"datatablesdiv" B> t  <i><p>',
+					buttons: [
+						// 'colvis','copy','csv','excel','pdf','print',
+						   'colvis','excel','pdf','print',
+					]
+				} );
+	     
+    
+
+    // code to handle ajax call when report form is submitted
+    
+    //$('form').submit(function(event) {
+    
+    //requestType = "generateReport";
+    
+    //alert($('#formType').val());
+    
+    
+//	var dataString = {
+//	   'requestType'           : requestType,
+//            'formType'              : $('#formType').val(),
+//            'partner'           : $('#partner').val(),
+//            'date'    		   : $('#date').val()
+//        };
+
+	
+
+ //   $.ajax({
+ //           type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+  //          url         : 'report-generator.php', // the url where we want to POST
+  //          data        : dataString, // our data object
+            
+  //      })
+            // using the done promise callback
+   //         .done(function(data) {
+
+	
+	    
+   //             $('#reportResult').html(data);
+		
+		
+		
+		
+    //        });
+
+        // stop the form from submitting the normal way and refreshing the page
+     //   event.preventDefault();
+   // });
+
+});
+    
+	   
+	</script> 		
+		
+		<title> AFI Reporting Tool </title>
+	</head>
+	<body>
+		
+
+
+
